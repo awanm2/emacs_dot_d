@@ -12,18 +12,31 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
+;;-----------------------------------------------------
+;; function args
+(unless (package-installed-p 'function-args)
+  (package-install 'function-args))
 (require 'function-args) ; package must be installed
-(require 'sr-speedbar)  ;package must be installed
+;;-----------------------------------------------------
+;; sr-speedbar
+(unless (package-installed-p 'sr-speedbar)
+  (package-install 'sr-speedbar))
+(require 'sr-speedbar)
+;;-----------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;;-----------------------------------------------------
-;; setup helm
-;;info :: a line about helm
+;; helm
+(unless (package-installed-p 'helm)
+  (package-install 'helm))
 (require 'helm)
 (require 'helm-config)
 (helm-mode 1)
 (helm-autoresize-mode t) ;; auto rize helm buffer
 (require 'setup-general)
-
+;;-----------------------------------------------------
+;; company mode
+(unless (package-installed-p 'company)
+  (package-install 'company))
 (require 'company) ;; package must be installed
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-c-headers)
@@ -69,4 +82,4 @@
 
 
 ;;--------------------------------------------------------
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;;(global-set-key (kbd "C-x C-b") 'ibuffer)
