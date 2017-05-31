@@ -83,3 +83,14 @@
 
 ;;--------------------------------------------------------
 ;;(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; ========== Prevent Emacs from making backup files ==========
+(setq make-backup-files nil)
+(setq auto-save-default nil) ; stop creating those #auto-save# files
+;;---------------------------------------------
+;; ========== Enable Line and Column Numbering ==========
+;; Show line-number in the mode line
+(line-number-mode 1)
+(global-linum-mode 1) ; always show line numbers
+
+;; Show column-number in the mode line
+;;(column-number-mode 1)
