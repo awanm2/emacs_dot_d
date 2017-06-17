@@ -60,6 +60,20 @@
 (require 'setup-c)
 
 
+;;-----------------------------------------------------
+;; go lang stuff
+(unless (package-installed-p 'company-go)
+  (package-install 'company-go))
+(require 'company-go) ; package must be installed
+
+(unless (package-installed-p 'go-mode)
+  (package-install 'go-mode))
+(require 'go-mode) ; package must be installed
+
+
+;;-----------------------------------------------------
+
+
 ;; function-args
 ;; (require 'function-args)
 ;; (fa-config-default)
