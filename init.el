@@ -58,6 +58,27 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-c)
+;;-----------------------------------------------------
+;; TeX Stuff
+(require 'flymake)
+(defun flymake-get-tex-args (file-name)
+  (list "pdflatex"
+        (list "-file-line-error" "-draftmode" "-interaction=nonstopmpode" file-name)))
+
+(add-hook 'LaTex-mode-hook 'flymake-mode)
+;; Spell Check
+(setq ispell-program-name "ispell");Other option is apsell
+(setq ispell-dictionary "english")
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+
+;; Outline mode -- hide parts of the file
+(defun turn-on-outline-minor-mode ()
+  (outline-minro-mode-1) )
+(add-hook 'LaTex-mode-hook 'turn-on-outline-minor-mode)
+(add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
+(setq outline-minor-mode-prefix "\C-c \C-o"); key binding
+
 
 
 ;;-----------------------------------------------------
