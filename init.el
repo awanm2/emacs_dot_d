@@ -67,10 +67,10 @@
 
 (add-hook 'LaTex-mode-hook 'flymake-mode)
 ;; Spell Check
-(setq ispell-program-name "ispell");Other option is apsell
-(setq ispell-dictionary "english")
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+;(setq ispell-program-name "ispell");Other option is apsell
+;(setq ispell-dictionary "english")
+;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
 ;; Outline mode -- hide parts of the file
 (defun turn-on-outline-minor-mode ()
