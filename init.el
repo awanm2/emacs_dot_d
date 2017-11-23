@@ -13,6 +13,22 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 ;;-----------------------------------------------------
+;; material theme
+;;-----------------------------------------------------
+(unless (package-installed-p 'material-theme)
+  (package-install 'material-theme))
+(require 'material-theme) ; package must be installed
+
+(load-theme 'material t)
+;;-----------------------------------------------------
+;; exec-path-from-shell
+;(unless (package-installed-p 'exec-path-from-shell)
+;  (package-install 'exec-path-from-shell))
+;(require 'exec-path-from-shell)
+;(when (memq window-system '(mac ns x))
+;  (exec-path-from-shell-initialize))
+;;-----------------------------------------------------
+
 ;; function args
 (unless (package-installed-p 'function-args)
   (package-install 'function-args))
@@ -58,6 +74,7 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-c)
+(require 'setup-python)
 ;;-----------------------------------------------------
 ;; TeX Stuff
 (require 'flymake)
