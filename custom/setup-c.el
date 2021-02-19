@@ -6,6 +6,12 @@
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 
+
+(add-hook 'c++-mode-hook 'company-c-headers-setup)
+;(add-hook 'c-mode-hook 'company-c-headers-setup)
+(add-hook 'c++-mode-hook 'company-semantic-setup)
+;(add-hook 'c-mode-hook 'company-semantic-setup)
+
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
 ;; “k&r”: What Kernighan and Ritchie, the authors of C used in their book
@@ -18,10 +24,16 @@
 ;; “java”: The default style for java-mode (see below)
 ;; “user”: When you want to define your own style
 (setq c-default-style "linux") ;; set style to "linux"
+(setq c-basic-offset 4)
 
 (use-package cc-mode
   :init
   (define-key c-mode-map  [(tab)] 'company-complete)
   (define-key c++-mode-map  [(tab)] 'company-complete))
+
+
+
+(setq company-c-headers-path-system '("/usr/lib" "/usr/include" "/usr/local/include"))
+
 
 (provide 'setup-c)

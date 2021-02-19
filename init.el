@@ -146,3 +146,23 @@
 
 ;; Show column-number in the mode line
 ;;(column-number-mode 1)
+
+;;(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+;; '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
+(setq indent-tabs-mode nil)
+
+
+;; // TODO ADD so that we require electric pair mode 
+(electric-pair-mode 1)
+;; show which parenthesis matches the one I’m looking at
+(show-paren-mode 1)
+;;  modify the titlebar to contain the current file name
+(setq frame-title-format "%b")
+
+;;// Open Links in google chrome
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
