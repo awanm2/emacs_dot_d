@@ -7,7 +7,7 @@
 (setq python-shell-interpreter "python3")
 (unless (package-installed-p 'python-mode)
   (package-install 'python-mode))
-;(require 'python-mode)
+(require 'python-mode)
 
 (unless (package-installed-p 'elpy)
   (package-install 'elpy))
